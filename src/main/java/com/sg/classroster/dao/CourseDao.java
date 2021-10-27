@@ -12,7 +12,8 @@ import java.util.List;
 
 /**
  *
- * @author afsanamiji
+ * @author arbel 
+ * 
  */
 public interface CourseDao {
      Course getCourseById(int id);

@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  *
- * @author afsanamiji
+ * @author arbel
  */
 @Controller
 public class TeacherController {
@@ -56,13 +56,14 @@ public class TeacherController {
         teacher.setFirstName(firstName);
         teacher.setLastName(lastName);
         teacher.setSpecialty(specialty);
+        teacherDao.addTeacher(teacher);
 
-        Validator validate = Validation.buildDefaultValidatorFactory().getValidator();
-        violations = validate.validate(teacher);
-
-        if (violations.isEmpty()) {
-            teacherDao.addTeacher(teacher);
-        }
+//        Validator validate = Validation.buildDefaultValidatorFactory().getValidator();
+//        violations = validate.validate(teacher);
+//
+//        if (violations.isEmpty()) {
+//            
+//        }
 
         return "redirect:/teachers";
     }

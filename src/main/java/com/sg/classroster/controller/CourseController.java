@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  *
- * @author afsanamiji
+ * @author Arbel    
  */
 @Controller
 public class CourseController {
@@ -51,15 +51,15 @@ public class CourseController {
     }
 
     @PostMapping("addCourse")
-    public String addCourse(Course course, HttpServletRequest request) {
-        String teacherId = request.getParameter("teacherId");
-        String[] studentIds = request.getParameterValues("studentId");
+    public String addCourse(Course course, HttpServletRequest request) { //adding a course  by 
+        String teacherId = request.getParameter("teacherId"); // getting teacher id from URL
+        String[] studentIds = request.getParameterValues("studentId"); //  getting student id from url
 
-        course.setTeacher(teacherDao.getTeacherById(Integer.parseInt(teacherId)));
+        course.setTeacher(teacherDao.getTeacherById(Integer.parseInt(teacherId)));  //adding a teacher into the course using set.
 
-        List<Student> students = new ArrayList<>();
-        for (String studentId : studentIds) {
-            students.add(studentDao.getStudentById(Integer.parseInt(studentId)));
+        List<Student> students = new ArrayList<>(); //  creating a list of student from mutiple students using arraylist
+        for (String studentId : studentIds) {     //
+            students.add(studentDao.getStudentById(Integer.parseInt(studentId))); //
         }
         course.setStudents(students);
         courseDao.addCourse(course);

@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  *
- * @author afsanamiji
+ * @author arbel
  */
 @Controller
 public class StudentController {
@@ -38,7 +38,7 @@ public class StudentController {
     @Autowired
     CourseDao courseDao;
     
-    Validator validate = Validation.buildDefaultValidatorFactory().getValidator();
+    //Validator validate = Validation.buildDefaultValidatorFactory().getValidator();
 
 
     @GetMapping("students")

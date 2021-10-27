@@ -10,7 +10,7 @@ import javax.validation.constraints.Size;
 
 /**
  *
- * @author afsanamiji
+ * @author arbel
  */
 public class Student {
 

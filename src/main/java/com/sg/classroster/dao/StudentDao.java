@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author afsanamiji
+ * @author arbel
  */
 public interface StudentDao {
      Student getStudentById(int id);
